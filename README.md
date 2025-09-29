@@ -2,6 +2,10 @@
 
 A lightweight and user-friendly wrapper for the [HPatchLite](https://github.com/sisong/HPatchLite).
 
+## Instructions for Use
+- Use the following command to pull the submodule code
+> git submodule update --force --init --recursive --remote
+
 ## API
 
 ```c
