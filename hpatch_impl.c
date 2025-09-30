@@ -9,7 +9,7 @@
  */
 
 #include "hpatch_impl.h"
-#include "hpatch_conf.h"
+#include "decompresser_demo.h"
 
 hpi_patch_result_t hpi_patch(hpatchi_listener_t *listener, int patch_cache_size, int decompress_cache_size, hpi_TInputStream_read _do_read_diff, read_old_t _do_read_old, write_new_t _do_write_new)
 {

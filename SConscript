@@ -22,13 +22,15 @@ inc.append(cwd)
 # Since HPatchLite is a submodule, all its internal paths are relative to its root.
 hpatchlite_root = os.path.join(cwd, 'HPatchLite')
 inc.append(hpatchlite_root)
-inc.append(os.path.join(hpatchlite_root, 'decompresser'))
-inc.append(os.path.join(hpatchlite_root, 'decompresser/tinyuz'))
 inc.append(os.path.join(hpatchlite_root, 'HDiffPatch/libHDiffPatch/HPatchLite'))
 inc.append(os.path.join(hpatchlite_root, 'HDiffPatch/libHDiffPatch/HPatch'))
-inc.append(os.path.join(hpatchlite_root, 'HDiffPatch/libHDiffPatch/HPatch'))
 
-# --- Define the Component Group ---
+# Add decompressor source files only if they are enabled in the configuration.
+if GetDepend(['PKG_HPATCHLITE_DECOMPRESSER_TUZ']):
+    src += Glob('HPatchLite/tinyuz/decompress/tuz_dec.c')
+    inc.append(os.path.join(hpatchlite_root, 'tinyuz/decompress'))
+
+# --- Define the Component Group --- 
 # Define a group named 'hpatchlite' that will be added to the build system.
 # This group will only be compiled if the Kconfig option 'PKG_USING_HPATCHLITE' is enabled.
 group = DefineGroup('hpatchlite-wrapper', src, depend=['PKG_USING_HPATCHLITE'], CPPPATH=inc)
