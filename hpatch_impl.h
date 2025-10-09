@@ -11,9 +11,9 @@
 #ifndef __hpatch_impl_h__
 #define __hpatch_impl_h__
 
+#include "hpatch_conf.h"
 #include "hpatch_lite.h"
 #include "patch_types.h"
-#include "decompresser_demo.h"
 
 typedef enum hpi_patch_result_t
 {

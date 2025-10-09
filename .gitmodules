@@ -1,0 +1,3 @@
+[submodule "HPatchLite"]
+	path = HPatchLite
+	url = https://github.com/sisong/HPatchLite.git
